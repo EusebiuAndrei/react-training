@@ -1,30 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './TodoItem.css';
 
-class TodoItem extends React.Component {
-    constructor(props) {
-        super(props);
+const TodoItem = (props) => {
+    // Destructuring props
+    const { todo, onClick } = props;
 
-        this.state = {
-            name: 'Groceries',
-            done: false
-        }
-
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        this.setState({done: !this.state.done})
-    }
-
-    render() {
-        return (
-            <div className="root">
-                <p className={this.state.done ? "done" : null}>{this.state.name}</p>
-                <input type="checkbox" checked={this.state.done} onClick={this.handleClick}/>
-            </div>
-        )
-    }
+    return (
+        <li className="todoItem">
+            <p className={todo.done ? "todoItemDone" : null}>{todo.name}</p>
+            <input
+                type="checkbox"
+                checked={todo.done}
+                onClick={(e) => onClick(e, todo.id)}
+            />
+        </li>
+    );
 }
 
 export default TodoItem;
+
+TodoItem.propTypes = {
+    todo: {
+        id: PropTypes.string,
+        name: PropTypes.string,
+        done: PropTypes.bool
+    },
+    onClick: PropTypes.func
+}

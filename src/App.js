@@ -1,12 +1,12 @@
 import React from "react";
 import './App.css';
 
-import TodoItem from "./components/TodoItem";
+import TodoController from "./components/TodoController";
 
 function App() {
   return (
     <div className="App">
-      <TodoItem />
+      <TodoController />
     </div>
   );
 }
