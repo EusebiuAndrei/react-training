@@ -14,6 +14,6 @@ const TodoHeader = (props) => {
 export default TodoHeader;
 
 TodoHeader.propTypes = {
-    notDoneTodosTotal: PropTypes.number,
-    doneTodosTotal: PropTypes.number
+    notDoneTodosTotal: PropTypes.number.isRequired,
+    doneTodosTotal: PropTypes.number.isRequired
 }

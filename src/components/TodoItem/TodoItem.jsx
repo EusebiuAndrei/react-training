@@ -4,7 +4,7 @@ import './TodoItem.css';
 
 const TodoItem = (props) => {
     // Destructuring props
-    const { todo, onClick } = props;
+    const { todo, onChange } = props;
 
     return (
         <li className="todoItem">
@@ -12,7 +12,7 @@ const TodoItem = (props) => {
             <input
                 type="checkbox"
                 checked={todo.done}
-                onClick={(e) => onClick(e, todo.id)}
+                onChange={(e) => onChange(e, todo.id)}
             />
         </li>
     );
@@ -21,10 +21,10 @@ const TodoItem = (props) => {
 export default TodoItem;
 
 TodoItem.propTypes = {
-    todo: {
-        id: PropTypes.string,
+    todo: PropTypes.shape({
+        id: PropTypes.number,
         name: PropTypes.string,
         done: PropTypes.bool
-    },
-    onClick: PropTypes.func
+    }).isRequired,
+    onChange: PropTypes.func.isRequired
 }

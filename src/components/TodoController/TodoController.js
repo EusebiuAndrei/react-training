@@ -12,7 +12,7 @@ class TodoController extends React.Component {
         }
     }
 
-    handleClick = (e, id) => {
+    handleChange = (e, id) => {
         const todos = this.state.todos.map(todo => {
             if (todo.id !== id) return todo;
             return {
@@ -38,7 +38,7 @@ class TodoController extends React.Component {
         return (
             <div>
                 <TodoHeader notDoneTodosTotal={notDoneTodosTotal} doneTodosTotal={doneTodosTotal} />
-                <TodoList todos={todos} onClick={this.handleClick} />
+                <TodoList todos={todos} onChange={this.handleChange} />
             </div>
         )
     }
