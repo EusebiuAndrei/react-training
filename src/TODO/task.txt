@@ -9,3 +9,5 @@
    - when the done status is true, the name of the todo should be cut
    just like in todo-done.png
    hint: remember, expressions between {} are your friends
+
+
