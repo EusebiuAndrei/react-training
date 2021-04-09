@@ -1,4 +1,5 @@
 # Training [WIP]
+This training is aimed to reinforce the theory with some practical projects. There are already people that teach React incredibly well. That's why in prerequisites I'll point to them (well, content made by them actually :]]). But few people who give you a guidance beyond the reigning king project "To-do list". There will be a series of projects that will help you get your hands dirty by following good practices and wel-thought structure.
 
 ## Prerequisites
 A nice refresh of some JavaScript features. \
