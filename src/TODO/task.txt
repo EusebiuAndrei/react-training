@@ -1,0 +1,11 @@
+1. Create a TodoItem class component that looks like the one in todo.png
+   - You can hardcode values (name of the todo and done status)
+   - Add that component inside the App component to see it in
+   the browser
+2. Put name of the todo and done status in the state of the component
+   - You can still hardcode them (but now you should put initialize
+   them in a different place)
+3. Add a click event handler for the checkbox to change the done status
+   - when the done status is true, the name of the todo should be cut
+   just like in todo-done.png
+   hint: remember, expressions between {} are your friends
