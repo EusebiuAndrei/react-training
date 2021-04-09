@@ -17,6 +17,9 @@ This repo is organized in a way that would be easy for you to follow and do the 
 
 ## Project 1 
 
+### Description
+  We'll build a.. (ring bells) Todo App :)). I know what I said in the introduction, and no, I won't let you just with this. This we'll be just the first project to get yourself used to writting in React. And this is gonna go way beyond those basic to-do examples.. It will have a lot of additional features. Is gonna be kinda halfway from a normal todo app to google keep.
+
 ### Prerequisites
   - Videos 1-25 from here https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&ab_channel=Codevolution
   - Main concepts section from docs https://reactjs.org/docs/hello-world.html
