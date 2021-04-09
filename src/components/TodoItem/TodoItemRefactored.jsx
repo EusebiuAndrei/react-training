@@ -1,6 +1,9 @@
 import React from 'react';
 import './TodoItem.css';
 
+// Here is just a refactored version
+// There are small differences, but from my experience, this is more clean
+
 class TodoItem extends React.Component {
     constructor(props) {
         super(props);
