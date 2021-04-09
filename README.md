@@ -15,7 +15,9 @@ This repo is organized in a way that would be easy for you to follow and do the 
   - project-[i]-start The start with todos along in a TODO directory
   - project-[i]-final The final result (to see what you'll be building) + some refactoring and clean code tips
 
-## Project 1 Prerequisites
+## Project 1 
+
+### Prerequisites
   - Videos 1-25 from here https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&ab_channel=Codevolution
   - Main concepts section from docs https://reactjs.org/docs/hello-world.html
   - Eventually, you could try the practical tutorial from docs https://reactjs.org/tutorial/tutorial.html
