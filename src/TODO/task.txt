@@ -1,0 +1,50 @@
+1. Is time to create a list of todos. You'll see there's a fixture
+s folder. Inside it there's also a todos.js file which contains a
+simple mock of some todos. Make use of it to display a list of
+TodoItems.
+    - Create a TodoList component. You should keep the todos state
+in that component now. The handleChange function should also live
+there. Change its signature to handleChange(id, e) and rewrite it
+accordingly to receive an id and change the done property of the
+todo with the specified id.
+    - Refactor TodoItem component to receive as props a 'todo' and
+a 'onChange' function. Make sure to pass the todo id to the onChange
+call.
+Hint: https://reactjs.org/docs/handling-events.html#passing-arguments-to-event-handlers
+    - All good, but there's not any logic left in TodoItem component,
+so why not refactor it to Functional Component.
+
+2. We want a new feature. Above the list of TodoItems, we'd like to
+see a header with a counter for the todos that are done and for
+those that are not finished yet.
+    - Create a new component TodoHeader which receives as props
+{doneTodosTotal, notDoneTodosTotal} and displays how many todos
+are done and how many are still not done, according to todos_2.png.
+Display this above the TodoList.
+
+3. There's a problem now.. These values must be in sync with
+the state in the TodoList. So, how can we solve this?
+By 'Lifting state up'. All you need is a component to
+keep this state 'TodoController'.
+    - put state and handleChange in TodoController. In it's render
+function display TodoHeader and TodoList and pass props accordingly.
+Hint: https://reactjs.org/docs/lifting-state-up.html
+
+4. You'll work in a team and now there isn't a way to know the
+shape and types of props a component receives other than reading it.
+There should be a better way, right? There is indeed. It's called
+PropTypes. I'll leave you an example for the TodoItem here that you can
+just copy paste and your job is to write this PropTypes for the
+TodoHeader and TodoList component.
+Hint: https://reactjs.org/docs/typechecking-with-proptypes.html
+
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            name: PropTypes.string,
+            done: PropTypes.bool
+        })
+    ).isRequired,
+    onChange: PropTypes.func.isRequired
+}

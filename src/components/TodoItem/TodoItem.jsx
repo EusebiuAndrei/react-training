@@ -9,19 +9,19 @@ class TodoItem extends React.Component {
             name: 'Groceries',
             done: false
         }
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    handleClick = () => {
         this.setState({done: !this.state.done})
     }
 
     render() {
+        const { name, done } = this.state;
+
         return (
             <div className="root">
-                <p className={this.state.done ? "done" : null}>{this.state.name}</p>
-                <input type="checkbox" checked={this.state.done} onClick={this.handleClick}/>
+                <p className={done ? "done" : null}>{name}</p>
+                <input type="checkbox" checked={done} onClick={this.handleClick}/>
             </div>
         )
     }
