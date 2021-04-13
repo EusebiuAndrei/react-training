@@ -2,13 +2,15 @@ import React from 'react';
 import todos from "../../fixtures/todos";
 import TodoHeader from "../TodoHeader";
 import TodoList from "../TodoList";
+import CreateTodo from "../CreateTodo";
 
 class TodoController extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            todos: todos
+            todos: todos,
+            isCreateTodoOpen: false
         }
     }
 
@@ -23,6 +25,19 @@ class TodoController extends React.Component {
         this.setState({todos: todos});
     }
 
+    addTodo = (todo) => {
+        this.setState({todos: [...this.state.todos, todo]})
+    }
+
+    deleteTodo = (id) => {
+        const todos = this.state.todos.filter(todo => todo.id !== id);
+        this.setState({todos})
+    }
+
+    toggleCreateTodo = () => {
+        this.setState({isCreateTodoOpen: !this.state.isCreateTodoOpen})
+    }
+
     getTodosCount = () => {
         const todosTotal = this.state.todos.length;
         const doneTodosTotal = this.state.todos.filter(todo => todo.done === true).length;
@@ -32,13 +47,18 @@ class TodoController extends React.Component {
     }
 
     render() {
-        const { todos } = this.state;
+        const { todos, isCreateTodoOpen } = this.state;
         const { doneTodosTotal, notDoneTodosTotal } = this.getTodosCount();
 
         return (
             <div>
                 <TodoHeader notDoneTodosTotal={notDoneTodosTotal} doneTodosTotal={doneTodosTotal} />
-                <TodoList todos={todos} onChange={this.handleChange} />
+                {
+                    isCreateTodoOpen ?
+                    <CreateTodo toggle={this.toggleCreateTodo} addTodo={this.addTodo}/> :
+                    <button type='button' onClick={this.toggleCreateTodo}>Add new</button>
+                }
+                <TodoList todos={todos} onChange={this.handleChange} deleteTodo={this.deleteTodo}/>
             </div>
         )
     }

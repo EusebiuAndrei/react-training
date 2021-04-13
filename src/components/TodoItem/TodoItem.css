@@ -1,11 +1,15 @@
 .todoItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  list-style-type: none;
   padding: 0 12px;
   margin: 8px 0;
   border-radius: 8px;
   border: 1px solid black;
+}
+
+.todoItemOverview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .todoItemDone {
