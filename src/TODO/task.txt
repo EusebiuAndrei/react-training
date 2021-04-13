@@ -1,0 +1,36 @@
+1. Take a look on todos from the fixtures. There's a new field now,
+'description'.
+    - We need everyone who uses those to see that the type of props
+have changed, right? Include this new field in the PropTypes of
+TodoList and TodoItem.
+    - Add a button to TodoItem with the text "Show more".
+The design is in todo_item.png. When that button is clicked, the
+description of the todo item should be displayed
+(todo_item_more.png) and its text should be changed to "Show less".
+In order to do this you may need some state, which means you should
+refactor again to Class Component. Don't be afraid to do so.
+    Hint: Conditional rendering
+
+2. We have that list of todos, now we need a way to add a new todo.
+    - Create a CreateTodo component, having a form with the
+appropiate fields.
+    - In TodoController add two functions
+        - addTodo(todo) which takes a todo and adds it to the
+        todos array
+        - toggleCreateTodo() which toggle (from false to true and
+        vice-versa) a boolean value representing the show status
+        of the CreateTodo
+        - below TodoHeader add a button with the text 'Add new todo'.
+        the design is found in todo_controller.png.
+        onClick this button should be hidden and instead of it the
+        CreateTodo component should be displayed.
+        (todo_controller_create_todo.png)
+    - In CreateTodo, on form submission you should create a todo
+using the value of the name and description fields and with done
+set to false.
+          The props the CreateTodo component should receive:
+              - toggle: a function which shows or hides the component
+              - addTodo: a function which receives a todo and adds it
+              to the todos array
+
+3. Add the functionality to delete a todo.
